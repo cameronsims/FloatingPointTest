@@ -7,7 +7,7 @@
 void menu_showMenu() {
 	printf("Please put in a value from 1-6:\n");
 	printf("1 - Input a floating point number and see the binary representation\n");
-	printf("2 - Show how floating point nubmers work\n");
+	printf("2 - Show how floating point numbers work\n");
 	printf("3 - Exit the program\n");
 }
 
@@ -66,24 +66,32 @@ void ieee754_print(const float* const pFloat) {
 	float man = (exp != 0.0f) + ieee754_getMan(newStr);
 
 	//printf("(%c)(        )(                       )", sign);
-	printf("(%c)(2^%d)(%f)", sign, exp, man);
+	printf("(%c)(2^%d)(%f)\n\n", sign, exp, man);
 
 }
 
 char menu_getChar() {
 	// Set string to some value, so compiler doesn't cry
-	char* str = "...";
+	char c = ' ';
 	// Get a string from the user
-	scanf_s("%s", str);
+	printf("Input a character: ");
+	scanf_s("%c", &c);
+	// Get rid of newline character
+	char workAround;
+	scanf_s("%c", &workAround);
 	// Return the character to user
-	return str[0];
+	return c;
 }
 
 float menu_getFloat() {
 	// Set float to zero so that it isn't going to cause the compiler to cry
 	float f = 0.0f;
 	// Get a float from the user
+	printf("Input a floating point number: ");
 	scanf_s("%f", &f);
+	// Get rid of newline character
+	char workAround;
+	scanf_s("%c", &workAround);
 	// Return the float to user
 	return f;
 }

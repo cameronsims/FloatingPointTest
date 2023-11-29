@@ -8,10 +8,10 @@ int main() {
 	float number = 0.0f;
 	// Get an option from the user
 	char option = ' ';
-	// Show the menu to the user
-	menu_showMenu();
 	// Select what to do
-	while (option != '6') {
+	while (option != '3') {
+		// Show the menu to the user
+		menu_showMenu();
 		// Get a character from the user
 		option = menu_getChar();
 		// Jump to option
@@ -33,6 +33,10 @@ int main() {
 		  // Exit
 		  case '3': {
 			  // Exit the program
+			  break;
+		  }
+		  // ARG!!!
+		  case '\0': {
 			  break;
 		  }
 		  // If there is no behaviour
